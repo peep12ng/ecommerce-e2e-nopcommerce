@@ -1,1 +1,1 @@
-nopCommerce public demo has CAPTCHA -> E2E target moved to OpenCart
+nopCommerce, OpenCart public demo has CAPTCHA -> E2E target moved to OpenCart
