@@ -1,10 +1,10 @@
 import pytest
 
 from utils.config import SETTINGS
-from pages.desktops_page import DesktopsPage
-from pages.product_page import ProductPage
-from pages.cart_page import CartPage
-from pages.checkout_gate_page import CheckoutGatePage
+from pages.nop.desktops_page import DesktopsPage
+from pages.nop.product_page import ProductPage
+from pages.nop.cart_page import CartPage
+from pages.nop.checkout_gate_page import CheckoutGatePage
 
 @pytest.mark.legacy
 def test_smk_01_purchase_flow_to_checkout_gate(driver):

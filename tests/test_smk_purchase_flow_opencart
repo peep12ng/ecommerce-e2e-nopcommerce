@@ -1,0 +1,19 @@
+import pytest
+from utils.config import SETTINGS
+
+from pages.oc.oc_home_page import OpenCartHomePage
+from pages.oc.oc_search_results_page import OpenCartSearchResultsPage
+from pages.oc.oc_product_page import OpenCartProductPage
+from pages.oc.oc_cart_page import OpenCartCartPage
+
+@pytest.mark.lagacy
+def  test_smk_01_purchase_flow_to_checkout_opencart(driver):
+    OpenCartHomePage(driver, SETTINGS.base_url).open().search("MacBook")
+
+    OpenCartSearchResultsPage(driver, SETTINGS.base_url).wait_loaded().open_product_by_name("MacBook")
+
+    OpenCartProductPage(driver, SETTINGS.base_url).wait_loaded().add_to_cart().go_to_cart()
+
+    cart = OpenCartCartPage(driver, SETTINGS.base_url).wait_loaded()
+    assert cart.item_count() >= 1, "Cart should have at least 1 item"
+    cart.proceed_to_checkout()
