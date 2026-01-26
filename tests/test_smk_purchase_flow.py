@@ -6,7 +6,7 @@ from pages.product_page import ProductPage
 from pages.cart_page import CartPage
 from pages.checkout_gate_page import CheckoutGatePage
 
-@pytest.mark.smoke
+@pytest.mark.legacy
 def test_smk_01_purchase_flow_to_checkout_gate(driver):
     desktops = DesktopsPage(driver, SETTINGS.base_url).open()
 
