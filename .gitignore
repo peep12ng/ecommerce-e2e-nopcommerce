@@ -6,6 +6,7 @@ __pycache__/
 reports/screenshots/*.png
 reports/screenshots/*.jpg
 reports/screenshots/*.webp
+reports/pytest_report.html
 
 # webdriver-manager cache
 .wdm/
