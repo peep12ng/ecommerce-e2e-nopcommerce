@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.log
+
+reports/screenshots/*.png
+reports/screenshots/*.jpg
+reports/screenshots/*.webp
+
+# webdriver-manager cache
+.wdm/
