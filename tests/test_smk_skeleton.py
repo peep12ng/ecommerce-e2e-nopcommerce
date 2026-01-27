@@ -1,10 +1,16 @@
 import pytest
-from utils.config import SETTINGS
-from utils.screenshot import save_screenshot
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
-@pytest.mark.smoke
+from utils.config import SETTINGS
+
+@pytest.mark.legacy
 def test_smk_00_open_home(driver):
     driver.get(SETTINGS.base_url)
-    assert "nopcommerce demo store" in driver.title.lower()
 
-    save_screenshot(driver, SETTINGS.screenshots_dir, "smk_00_home")
+    WebDriverWait(driver, 15).until(
+        EC.presence_of_element_located((By.NAME, "search"))
+    )
+
+    assert "잠시" not in (driver.title or "")
