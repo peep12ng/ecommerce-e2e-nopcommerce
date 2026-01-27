@@ -29,7 +29,4 @@ def pytest_runtest_makereport(item, call):
     if rep.when == "call" and rep.failed:
         drv = item.funcargs.get("driver")
         if drv:
-            test_name = item.name.replace("/", "_").replace("\\", "_")
-            path = save_screenshot(drv, SETTINGS.screenshots_dir, f"FAIL_{test_name}")
-            rep.extra = getattr(rep, "extra", [])
-            rep.extra.append(f"Screenshot saved to {os.path.abspath(path)}")
+            save_screenshot(drv, SETTINGS.screenshots_dir, f"FAIL_{item.name}.png")
