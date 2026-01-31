@@ -26,7 +26,7 @@ python -m pytest -m smoke --headless --html=reports/pytest_reports.html --self-c
 
  - 본 레포는 Selenium + pytest 기반의 E2E 스모크 테스트 구현을 목표로 합니다.
 
- -  로컬/CI에서 안정적으로 반복 실행하기 위해 메인 대상은 SauceDemo로 선택했습니다.
+ - 로컬/CI에서 안정적으로 반복 실행하기 위해 메인 대상은 SauceDemo로 선택했습니다.
 
  - 공개 데모 스토어(nopCommerce/OpenCart)는 환경에 따라 사람 확인(CAPTCHA/봇체크) 이 발생해 테스트가 불안정해질 수 있어, 관련 시나리오는 legacy로 분리했습니다.
 
